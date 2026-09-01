@@ -3,44 +3,55 @@ import astroLogo from '../assets/astro.svg';
 import background from '../assets/42345.jpg';
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
+<div class="flex flex-col h-full w-full">
 
-			<h1 class="text-lg font-bold text-olive-100">
-				Fruit Trees grown by family
-			</h1>
-			<button class="bg-yellow-700 text-olive-100 px-2 py-1 rounded font-semibold">
-				Explore our Collections
-			</button>
-		</section>
-	</main>
+	<div id="container" class="flex flex-col  h-[80%] relative">
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
+		<main class="flex justify-center items-center h-[80%]">
+			<section id="hero">
+
+				<h1 class="text-lg font-bold text-olive-100">
+					Fruit Trees grown by family
+				</h1>
+				<a href="#collection">
+					<button class="bg-yellow-700 text-olive-100 px-2 py-1 rounded font-semibold">
+						Explore our Collections
+					</button>
+				</a>
+			</section>
+		</main>
 
 
+	</div>
+	<div id="collection" class="w-full flex-1 flex-col flex-1">
+		<h3 class="text-2xl font-semibold text-center text-olive-600 underline decoration-amber-700">
+			Collection
+		</h3>
+		<div class="flex gap-3 items-center">
+			<div class="relative">
+				<img class="rounded opacity-90 absolute top-0 left-0 -z-1 h-[200px] w-[300px]"  src={background.src} alt="" fetchpriority="high" />
+				Mango
+			</div>
+
+		</div>
+</div>
 </div>
 
 <style>
 	#background {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 80%;
 		z-index: -1;
 		filter: blur(2px);
 	}
 
 	#container {
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
 	}
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
 
 	#hero {
 		display: flex;
