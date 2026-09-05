@@ -1,14 +1,18 @@
 ---
 import background from '../assets/42345.jpg';
 import '../styles/global.css';
+import Layout from "../layouts/Layout.astro"
 ---
 
-<div class="h-full w-full p-4 grid grid-cols-1 gap-5 lg:grid-cols-2">
+<Layout>
+    <div class="h-full w-full p-4 grid grid-cols-1 gap-5 lg:grid-cols-2">
 
-    <div class="h-[300px] w-full p-3">
-        <img src={background.src} alt="mango" class="rounded">
+        <div class="h-[300px] w-full p-3">
+            <img src={background.src} alt="mango" class="rounded">
+        </div>
+        <div>
+            plant info
+        </div>
     </div>
-    <div>
-        plant info
-    </div>
-</div>
+
+</Layout>
