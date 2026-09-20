@@ -1,15 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/nursery-thumbnail.jpg';
+import mango from '../assets/nursery-mango.jpg';
 ---
 
 <div class="w-full flex flex-col min-h-screen">
   <!-- Hero Container -->
   <header class="relative w-full min-h-[60vh] flex items-center justify-center text-center p-6 overflow-hidden">
     <!-- Blurred Background with fixed aspect ratio via object-cover -->
-    <img
+    <Image
       id="background"
-      src={background.src}
+      src={background}
       alt="Fruit tree hero background"
       fetchpriority="high"
       class="absolute inset-0 w-full h-full object-cover  blur-[2px] scale-105 z-0"
@@ -39,9 +41,9 @@ import background from '../assets/nursery-thumbnail.jpg';
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Collection Card 1 -->
       <a href="/mangos" class="group relative h-[220px] w-full rounded-lg overflow-hidden shadow-md block">
-        <img
+        <Image
           class="w-full h-full object-cover object-center opacity-70 mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
-          src={background.src}
+          src={mango}
           alt="Mango collection"
         />
         <div class="absolute inset-0 bg-black/20"></div>
