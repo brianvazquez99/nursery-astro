@@ -1,8 +1,12 @@
 ---
-import { Image } from 'astro:assets';
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/nursery-thumbnail.jpg';
 import mango from '../assets/nursery-mango.jpg';
+import avocado from '../assets/nursery-avocado.jpg';
+import guava from '../assets/nursery-guava.jpg';
+import lychee from '../assets/nursery-lychee.jpg';
+import Image from 'astro/components/Image.astro';
+import Lychees from '../pages/lychees.astro';
 ---
 
 <div class="w-full flex flex-col min-h-screen">
@@ -10,6 +14,7 @@ import mango from '../assets/nursery-mango.jpg';
   <header class="relative w-full min-h-[60vh] flex items-center justify-center text-center p-6 overflow-hidden">
     <!-- Blurred Background with fixed aspect ratio via object-cover -->
     <Image
+        loading="eager"
       id="background"
       src={background}
       alt="Fruit tree hero background"
@@ -42,6 +47,8 @@ import mango from '../assets/nursery-mango.jpg';
       <!-- Collection Card 1 -->
       <a href="/mangos" class="group relative h-[220px] w-full rounded-lg overflow-hidden shadow-md block">
         <Image
+        loading="eager"
+        fetchpriority="high"
           class="w-full h-full object-cover object-center opacity-70 mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
           src={mango}
           alt="Mango collection"
@@ -54,9 +61,11 @@ import mango from '../assets/nursery-mango.jpg';
 
       <!-- Collection Card 2 -->
       <a href="/avocados" class="group relative h-[220px] w-full rounded-lg overflow-hidden shadow-md block">
-        <img
+        <Image
+        loading="eager"
+        fetchpriority="high"
           class="w-full h-full object-cover object-center opacity-70 mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
-          src={background.src}
+          src={avocado}
           alt="Avocado collection"
         />
         <div class="absolute inset-0 bg-black/20"></div>
@@ -67,9 +76,11 @@ import mango from '../assets/nursery-mango.jpg';
 
       <!-- Collection Card 3 -->
       <a href="/guavas" class="group relative h-[220px] w-full rounded-lg overflow-hidden shadow-md block">
-        <img
+        <Image
+        loading="eager"
+        fetchpriority="high"
           class="w-full h-full object-cover object-center opacity-70 mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
-          src={background.src}
+          src={guava}
           alt="Guava collection"
         />
         <div class="absolute inset-0 bg-black/20"></div>
@@ -79,9 +90,11 @@ import mango from '../assets/nursery-mango.jpg';
       </a>
       <!-- Collection Card 4 -->
       <a href="/lychees" class="group relative h-[220px] w-full rounded-lg overflow-hidden shadow-md block">
-        <img
+        <Image
+        loading="eager"
+        fetchpriority="high"
           class="w-full h-full object-cover object-center opacity-70 mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
-          src={background.src}
+          src={lychee}
           alt="Lychee collection"
         />
         <div class="absolute inset-0 bg-black/20"></div>

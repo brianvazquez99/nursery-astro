@@ -406,6 +406,8 @@ import Image from "astro/components/Image.astro";
       >
         <Image
           src={mangoThumbnail}
+          loading="eager"
+          fetchpriority="high"
           alt="Avocado tree foliage and fruit"
           class="w-full h-full object-cover object-center"
         />
