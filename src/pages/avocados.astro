@@ -6,19 +6,54 @@ import Image from 'astro/components/Image.astro';
 ---
 
 <script>
-const simmonsMod = document.getElementById("simmons") as HTMLDialogElement
-const simmonsOpen = document.getElementById("simmonsOpen")
-const simmonsClose = document.getElementById("simmonsClose")
+  const simmonsMod = document.getElementById("simmons") as HTMLDialogElement;
+  const simmonsOpen = document.getElementById("simmonsOpen");
+  const simmonsClose = document.getElementById("simmonsClose");
 
+  const catalinaMod = document.getElementById("catalina") as HTMLDialogElement;
+  const catalinaOpen = document.getElementById("catalinaOpen");
+  const catalinaClose = document.getElementById("catalinaClose");
 
-simmonsOpen?.addEventListener("click", () => {
-  simmonsMod.showModal();
-});
-simmonsClose?.addEventListener("click", () => {
-  simmonsMod.close();
-});
+  const monroeMod = document.getElementById("monroe") as HTMLDialogElement;
+  const monroeOpen = document.getElementById("monroeOpen");
+  const monroeClose = document.getElementById("monroeClose");
 
+  const russellMod = document.getElementById("russell") as HTMLDialogElement;
+  const russellOpen = document.getElementById("russellOpen");
+  const russellClose = document.getElementById("russellClose");
 
+  const oroNegroMod = document.getElementById("oroNegro") as HTMLDialogElement;
+  const oroNegroOpen = document.getElementById("oroNegroOpen");
+  const oroNegroClose = document.getElementById("oroNegroClose");
+
+  const donnieMod = document.getElementById("donnie") as HTMLDialogElement;
+  const donnieOpen = document.getElementById("donnieOpen");
+  const donnieClose = document.getElementById("donnieClose");
+
+  const principeNegroMod = document.getElementById("principeNegro") as HTMLDialogElement;
+  const principeNegroOpen = document.getElementById("principeNegroOpen");
+  const principeNegroClose = document.getElementById("principeNegroClose");
+
+  const choquetteMod = document.getElementById("choquette") as HTMLDialogElement;
+  const choquetteOpen = document.getElementById("choquetteOpen");
+  const choquetteClose = document.getElementById("choquetteClose");
+
+  simmonsOpen?.addEventListener("click", () => simmonsMod.showModal());
+  simmonsClose?.addEventListener("click", () => simmonsMod.close());
+  catalinaOpen?.addEventListener("click", () => catalinaMod.showModal());
+  catalinaClose?.addEventListener("click", () => catalinaMod.close());
+  monroeOpen?.addEventListener("click", () => monroeMod.showModal());
+  monroeClose?.addEventListener("click", () => monroeMod.close());
+  russellOpen?.addEventListener("click", () => russellMod.showModal());
+  russellClose?.addEventListener("click", () => russellMod.close());
+  oroNegroOpen?.addEventListener("click", () => oroNegroMod.showModal());
+  oroNegroClose?.addEventListener("click", () => oroNegroMod.close());
+  donnieOpen?.addEventListener("click", () => donnieMod.showModal());
+  donnieClose?.addEventListener("click", () => donnieMod.close());
+  principeNegroOpen?.addEventListener("click", () => principeNegroMod.showModal());
+  principeNegroClose?.addEventListener("click", () => principeNegroMod.close());
+  choquetteOpen?.addEventListener("click", () => choquetteMod.showModal());
+  choquetteClose?.addEventListener("click", () => choquetteMod.close());
 </script>
 
 <Layout>
@@ -30,14 +65,14 @@ simmonsClose?.addEventListener("click", () => {
         <div class="flex flex-col">
           <div class="flex items-start justify-between border-b border-slate-100 px-6 py-4">
             <div>
-              <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600">Mango Variety</p>
-              <h3 class="mt-1 text-xl font-bold text-slate-900">Glenn</h3>
+              <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600">Avocado Variety</p>
+              <h3 class="mt-1 text-xl font-bold text-slate-900">Simmons</h3>
             </div>
       
             <button
               id="simmonsClose"
               type="button"
-              aria-label="Close Glenn dialog"
+              aria-label="Close Simmons dialog"
               class="rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               ✕
@@ -46,12 +81,47 @@ simmonsClose?.addEventListener("click", () => {
       
           <div class="px-6 py-5">
             <p class="text-sm leading-6 text-slate-600">
-              A classic, early-season Florida variety known for its rich, sweet
-              flavor and smooth, entirely fiberless flesh.
+              Simmons is a productive avocado variety known for its smooth,
+              creamy texture and mild flavor.
             </p>
           </div>
         </div>
     </dialog>
+
+    {[
+      { id: "catalina", name: "Catalina", description: "A Florida avocado variety known for its rich flavor and smooth texture." },
+      { id: "monroe", name: "Monroe", description: "A large avocado variety with creamy flesh and good cold tolerance." },
+      { id: "russell", name: "Russell", description: "A Florida avocado variety with a long, slender shape and flavorful flesh." },
+      { id: "oroNegro", name: "Oro Negro", description: "A prized avocado variety known for its dark skin and rich, buttery flesh." },
+      { id: "donnie", name: "Donnie", description: "A flavorful avocado variety suited to warm Florida growing conditions." },
+      { id: "principeNegro", name: "Principe Negro", description: "A dark-skinned avocado variety with creamy flesh and excellent flavor." },
+      { id: "choquette", name: "Choquette", description: "A popular Florida avocado with large fruit, smooth skin, and mild flavor." },
+    ].map(({ id, name, description }) => (
+      <dialog
+        id={id}
+        class="m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-emerald-100 bg-white p-0 shadow-2xl backdrop:bg-slate-900/50"
+      >
+        <div class="flex flex-col">
+          <div class="flex items-start justify-between border-b border-slate-100 px-6 py-4">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600">Avocado Variety</p>
+              <h3 class="mt-1 text-xl font-bold text-slate-900">{name}</h3>
+            </div>
+            <button
+              id={`${id}Close`}
+              type="button"
+              aria-label={`Close ${name} dialog`}
+              class="rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              ✕
+            </button>
+          </div>
+          <div class="px-6 py-5">
+            <p class="text-sm leading-6 text-slate-600">{description}</p>
+          </div>
+        </div>
+      </dialog>
+    ))}
     
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
@@ -59,7 +129,7 @@ simmonsClose?.addEventListener("click", () => {
     <div class="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-50">
       <Image
         src={avocado}
-        alt="Mango tree foliage and fruit"
+        alt="Avocado tree foliage and fruit"
         class="w-full h-full object-cover object-center"
       />
     </div>
@@ -106,13 +176,23 @@ simmonsClose?.addEventListener("click", () => {
                 aria-hidden="true"
               >ⓘ</span>
             </button> 
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Catalina</span>
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Monroe</span>
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Russell</span>
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Oro Negro</span>
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Donnie</span>
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Principe Negro</span>
-          <span class="px-3.5 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200 hover:border-olive-500 transition-colors">Choquette</span>
+          {[
+            ["catalinaOpen", "Catalina"],
+            ["monroeOpen", "Monroe"],
+            ["russellOpen", "Russell"],
+            ["oroNegroOpen", "Oro Negro"],
+            ["donnieOpen", "Donnie"],
+            ["principeNegroOpen", "Principe Negro"],
+            ["choquetteOpen", "Choquette"],
+          ].map(([id, name]) => (
+            <button
+              id={id}
+              class="group flex items-center hover:cursor-pointer gap-1.5 rounded-lg border border-slate-200 bg-slate-100 px-3.5 py-1.5 text-sm font-medium text-slate-700 transition-all hover:border-olive-400 hover:bg-olive-50 hover:text-olive-700 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:ring-offset-1"
+            >
+              {name}
+              <span class="text-xs text-slate-400 transition-colors group-hover:text-olive-500" aria-hidden="true">ⓘ</span>
+            </button>
+          ))}
         </div>
       </div>
 
